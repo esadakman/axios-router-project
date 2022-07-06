@@ -1,11 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import Paginate from "../components/Paginate";
+import Followers from "../components/Followers";
 import SearchUser from "../components/SearchUser";
 
 const Home = () => {
-  const [allFollowes, setAllFollowes] = useState([]);
+  const [allFollowers, setAllFollowes] = useState([]);
 
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
@@ -15,7 +15,14 @@ const Home = () => {
       "https://api.github.com/users/esadakman/followers?per_page=100"
     );
     console.log(data);
+    setAllFollowes(data);
   };
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+    console.log(e.target.value);
+  };
+
   useEffect(() => {
     getFollowers();
     setTimeout(() => {
@@ -23,10 +30,14 @@ const Home = () => {
     }, 3000);
   }, []);
 
+  const followersList = allFollowers.filter((follower) =>
+    follower.login.includes(search)
+  );
+
   return (
     <div>
-      <SearchUser />
-      <Paginate />
+      <SearchUser handleChange={handleChange} />
+      <Followers followers={{ followersList, loading }} />
     </div>
   );
 };
