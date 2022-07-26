@@ -2,12 +2,19 @@
   text-align: center;
 }
 
-a{
+a {
   text-decoration: none;
-  color:#fff;
+  color: #fff;
   padding: 1rem;
 }
-a:hover{
+
+a:hover {
   text-decoration: none;
-  color:#666;
+  color: #666;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
