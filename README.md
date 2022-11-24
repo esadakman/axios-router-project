@@ -63,7 +63,7 @@ To get the data i used the following API's:
 To run this project;
 
 ```
-$ git clone https://github.com/esadakman/axios-router-project.git
+$ git clone https://github.com/esadakman/reactjs-axios-router.git
 $ cd axios-router-project/
 $ npm install / yarn
 $ npm start / yarn start
