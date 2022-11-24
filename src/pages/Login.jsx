@@ -23,12 +23,11 @@ function Copyright(props) {
       align="center"
       {...props}
     >
-      {"Copyright © "}
-      <Link color="inherit" href="https://clarusway.com/">
-        Clarusway
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
+      {"Copyright ©"}
+      <Link color="inherit" href="https://esadakman.github.io/">
+        esadakman 
+      </Link>
+      {new Date().getFullYear()} 
     </Typography>
   );
 }
